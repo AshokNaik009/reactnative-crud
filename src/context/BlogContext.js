@@ -20,8 +20,9 @@ const blogReducer = (state,action) =>{
 //    const [blogPosts , dispatch] = useReducer(blogReducer,[])
 
    const addBlogPost = (dispatch) => {
-     return (title,content) => {
+     return (title,content,callback) => {
      dispatch({type:'add_blogpost',payload:{title,content}})
+     callback();
      }; 
    }
 
@@ -33,4 +34,4 @@ const blogReducer = (state,action) =>{
 //   return <BlogContext.Provider value={{data:blogPosts,addBlogPost}} >{ children }</BlogContext.Provider>;
 // };
 
-export const {Context,Provider} = createDataContext(blogReducer,{addBlogPost,deleteBlogPost},[]);
+export const {Context,Provider} = createDataContext(blogReducer,{addBlogPost,deleteBlogPost},[ { title:'Test1' , content:'testing' ,id:1 } ]);
