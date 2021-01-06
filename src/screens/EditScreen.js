@@ -1,12 +1,11 @@
-import React from "react";
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import React,{useContext,useState} from "react";
+import { Text, StyleSheet, View, TouchableOpacity,TextInput } from "react-native";
+import { Context } from "../context/BlogContext";
+import BlogPostForm from "../components/BlogPostForm";
 
 const EditScreen = ({ navigation }) => {
-  return (
-    <View>
-      <Text> Edit Screen - {navigation.getParam("id")} </Text>
-    </View>
-  );
+  
+  return <BlogPostForm/>
 };
 
 const styles = StyleSheet.create({});
